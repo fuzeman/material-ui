@@ -26,6 +26,7 @@ const ListItem = React.createClass({
     autoGenerateNestedIndicator: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
     disableKeyboardFocus: React.PropTypes.bool,
+    href: React.PropTypes.string,
     initiallyOpen: React.PropTypes.bool,
     innerDivStyle: React.PropTypes.object,
     insetChildren: React.PropTypes.bool,
@@ -35,6 +36,7 @@ const ListItem = React.createClass({
     leftIcon: React.PropTypes.element,
     nestedLevel: React.PropTypes.number,
     nestedItems: React.PropTypes.arrayOf(React.PropTypes.element),
+    onClick: React.PropTypes.func,
     onKeyboardFocus: React.PropTypes.func,
     onMouseEnter: React.PropTypes.func,
     onMouseLeave: React.PropTypes.func,
@@ -67,6 +69,7 @@ const ListItem = React.createClass({
       initiallyOpen: false,
       nestedItems: [],
       nestedLevel: 0,
+      onClick: () => {},
       onKeyboardFocus: () => {},
       onMouseEnter: () => {},
       onMouseLeave: () => {},
@@ -108,6 +111,7 @@ const ListItem = React.createClass({
       leftIcon,
       nestedItems,
       nestedLevel,
+      onClick,
       onKeyboardFocus,
       onMouseLeave,
       onMouseEnter,
@@ -351,6 +355,7 @@ const ListItem = React.createClass({
           disabled={disabled}
           disableKeyboardFocus={disableKeyboardFocus || this.state.rightIconButtonKeyboardFocused}
           linkButton={true}
+          onClick={this._handleClick}
           onKeyboardFocus={this._handleKeyboardFocus}
           onMouseLeave={this._handleMouseLeave}
           onMouseEnter={this._handleMouseEnter}
@@ -436,6 +441,10 @@ const ListItem = React.createClass({
         {data}
       </div>
     );
+  },
+
+  _handleClick(e) {
+    this.props.onClick(e);
   },
 
   _handleKeyboardFocus(e, isKeyboardFocused) {
