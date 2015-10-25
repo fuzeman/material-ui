@@ -1,5 +1,5 @@
 const React = require('react');
-const PureRenderMixin = require('react-addons-pure-render-mixin');
+const DeepRenderMixin = require('../utils/deep-render-mixin');
 const PropTypes = require('../utils/prop-types');
 const StylePropable = require('../mixins/style-propable');
 const Typography = require('../styles/typography');
@@ -9,7 +9,7 @@ const ThemeManager = require('../styles/theme-manager');
 
 const List = React.createClass({
 
-  mixins: [PureRenderMixin, StylePropable],
+  mixins: [DeepRenderMixin, StylePropable],
 
   contextTypes: {
     muiTheme: React.PropTypes.object,
