@@ -26,6 +26,7 @@ const ListItem = React.createClass({
     autoGenerateNestedIndicator: React.PropTypes.bool,
     disabled: React.PropTypes.bool,
     disableKeyboardFocus: React.PropTypes.bool,
+    href: React.PropTypes.string,
     initiallyOpen: React.PropTypes.bool,
     innerDivStyle: React.PropTypes.object,
     insetChildren: React.PropTypes.bool,
