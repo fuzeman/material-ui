@@ -66,7 +66,7 @@ const ToolbarGroup = React.createClass({
       dropDownMenu: {
         root: {
           float: 'left',
-          color: Colors.lightBlack,// removes hover color change, we want to keep it
+          color: Colors.lightBlack, // removes hover color change, we want to keep it
           display: 'inline-block',
           marginRight: this.getSpacing(),
         },
